@@ -2,8 +2,7 @@
 title: "Plotly"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
-    vertical_layout: fill
+    orientation: rows
 ---
 ------
 
@@ -14,25 +13,9 @@ library(plotly)
 library(flexdashboard)
 ```
 
-Column {data-width=650}
+Row 
 -----------------------------------------------------------------------
-### **Bar chart demonstrating distribution of cuisine types for restaurants given a Grade A:**
-```{r}
-data("rest_inspec")
-
-rest_inspec_a =
-  rest_inspec %>%
-  filter(grade == "A") %>%
-  group_by(cuisine_description) %>%
-  summarise(n_obs = n()) %>%
-  mutate(cuisine_description = fct_reorder(cuisine_description, n_obs)) 
-  plot_ly(data = rest_inspec_a, x = ~cuisine_description, y = ~n_obs, color = ~cuisine_description, type = "bar", colors = "viridis") %>%
-    layout(autosize = F, width = 1200, heigh = 1200)
-```
-
-Column {data-width=300}
------------------------------------------------------------------------
-### **Box plot demonstrating restaurant scores by borough:** 
+### **Restaurant scores by borough:** 
 ```{r}
 rest_inspec_score = 
   rest_inspec %>%
@@ -42,7 +25,25 @@ rest_inspec_score =
   plot_ly(data = rest_inspec_score, y = ~score, color = ~boro, type = "box", colors = "viridis")
 ```
 
-### **Scatterplot demonstrating inspection dates of Grade A Japanese restaurant scores in Manhattan**
+Row {.tabset .tabset-fade}
+-----------------------------------------------------------------------
+### **Distribution of cuisine types for restaurants given a Grade A in Brooklyn:**
+```{r}
+data("rest_inspec")
+
+rest_inspec_a =
+  rest_inspec %>%
+  filter(grade == "A") %>%
+  filter(boro == "BROOKLYN") %>%
+  group_by(cuisine_description) %>%
+  summarise(n_obs = n()) %>%
+  mutate(cuisine_description = fct_reorder(cuisine_description, n_obs)) 
+  plot_ly(data = rest_inspec_a, x = ~cuisine_description, y = ~n_obs, color = ~cuisine_description, type = "bar", colors = "viridis") %>%
+    layout(autosize = F, width = 1200, heigh = 1200)
+```
+
+
+### **Inspection dates of Grade A Japanese restaurant scores in Manhattan**
 ```{r}
 rest_inspec_japanese = 
   rest_inspec %>%
