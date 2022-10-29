@@ -1,22 +1,22 @@
 ---
 title: "Plotly"
 output: 
-  html_document:
-    toc: true
-    toc_float: true
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
 ------
 
-Here is a series of plots dervied from NYC Restaurant Inspection data.
-
-```{r, include = FALSE}
+```{r setup, include = FALSE}
 library(tidyverse)
 library(p8105.datasets)
 library(plotly)
+library(flexdashboard)
 ```
 
-
-**Bar chart demonstrating distribution of cuisine types for restaurants given a grade A:**
+Column {data-width=650}
+-----------------------------------------------------------------------
+### **Bar chart demonstrating distribution of cuisine types for restaurants given a Grade A:**
 ```{r}
 data("rest_inspec")
 
@@ -26,6 +26,29 @@ rest_inspec_a =
   group_by(cuisine_description) %>%
   summarise(n_obs = n()) %>%
   mutate(cuisine_description = fct_reorder(cuisine_description, n_obs)) 
-  plot_ly(data = rest_inspec_a, x = ~cuisine_description, y = ~n_obs, color = ~cuisine_description, type = "bar", colors = "viridis") 
+  plot_ly(data = rest_inspec_a, x = ~cuisine_description, y = ~n_obs, color = ~cuisine_description, type = "bar", colors = "viridis") %>%
+    layout(autosize = F, width = 1200, heigh = 1200)
+```
+
+Column {data-width=300}
+-----------------------------------------------------------------------
+### **Box plot demonstrating restaurant scores by borough:** 
+```{r}
+rest_inspec_score = 
+  rest_inspec %>%
+  drop_na(score) %>%
+  mutate(boro = fct_reorder(boro, score))
+
+  plot_ly(data = rest_inspec_score, y = ~score, color = ~boro, type = "box", colors = "viridis")
+```
+
+### **Scatterplot demonstrating inspection dates of Grade A Japanese restaurant scores in Manhattan**
+```{r}
+rest_inspec_japanese = 
+  rest_inspec %>%
+  filter(cuisine_description == "Japanese") %>%
+  filter(boro == "MANHATTAN") %>%
+  filter(grade == "A")
+  plot_ly(data = rest_inspec_japanese, x = ~inspection_date, y = ~score, type = "scatter", colors = "viridis")
 ```
 
