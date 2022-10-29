@@ -4,11 +4,15 @@ navbar:
   title: "P8105 - Homework 4: Home"
   right:
     - text: "Resume"
-      href: about.html
+      href: resume.html
+    - text: "Plotly"
+      href: plotly.html
     - icon: fa-envelope fa-lg
       href: mailto:<gw2442@cumc.columbia.edu>
     - icon: fa-github fa-lg
       href: https://github.com/gw2442/
+    - icon: fa-brands fa-linkedin
+      href: https://www.linkedin.com/in/gwyneth-w-673355135/
 output:
   html_document:
-    theme: cerulean
+    theme: journal

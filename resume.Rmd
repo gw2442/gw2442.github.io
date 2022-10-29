@@ -1,5 +1,9 @@
 ---
 title: "Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
 ---
 ------
 
@@ -11,7 +15,7 @@ title: "Resume"
 
 * *Relevant Courses*: Health Economics, Application of Epidemiologic Research Methods, Design and Conduct of Observational Epidemiology, Analysis of Categorical Data, Healthcare Accounting & Budgeting, Data Science
 
-#### **Johns Hopkins University**	- *Baltimore, MD, -	            May 2021*
+#### **Johns Hopkins University**	- *Baltimore, MD -	            May 2021*
 
 **Bachelor of Science**, Double-major: Molecular and Cellular Biology, Sociology, GPA: 3.91, Dean’s List 
 
@@ -32,7 +36,7 @@ Biochemistry course, coupled with independent literature review research focused
 
 •	Communicated findings through written reports and data visualization of survey data using SAS and Excel to MSF team and stakeholders 	
 
-##### **Johns Hopkins University** - 	*Baltimore, MD	    -    Sep 2018 – May 2021*
+#### **Johns Hopkins University** - 	*Baltimore, MD	    -    Sep 2018 – May 2021*
 ##### *Research Assistant, Oncology Department – Dr. Cynthia Sears (Sep 2020 – May 2021)*
 
 •	Organized and analyzed metagenomics database of more than 400 samples to identify potential bacterial genes of interest in the human gut microbiome that may pose as possible functional biomarkers for colorectal cancer and presented findings in a weekly report to research team
@@ -40,7 +44,8 @@ Biochemistry course, coupled with independent literature review research focused
 ##### *Research Assistant, Sociology Department – Dr. Alexandre White (Spring 2020)*
 
 •	Streamlined over 100 population and demographics data sets for the Hopkins Population Centre Data Hub used for epidemiological and medical research of COVID-19 to provide evidence-based policy recommendations
-Research Assistant, Immunology Department – Dr. Andrea Cox (Sep 2018 – May 2019)
+
+##### *Research Assistant, Immunology Department – Dr. Andrea Cox (Sep 2018 – May 2019)*
 
 •	Conducted over 100 mouse DNA extractions from blood and tissue samples to assess the presence of HSV DNA and understand the effects of LRRK2 protein mutation in inflammasome activity
 
