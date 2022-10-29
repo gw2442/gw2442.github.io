@@ -1,9 +1,9 @@
 name: "Yay internet!"
 output_dir: "."
 navbar:
-  title: "Home"
+  title: "P8105: Homework 4"
   right:
-    - text: "About"
+    - text: "Resume"
       href: about.html
     - icon: fa-envelope fa-lg
       href: mailto:<you@youremail.com>
