@@ -1,14 +1,14 @@
-name: "Yay internet!"
+name: "p8105_hw4"
 output_dir: "."
 navbar:
-  title: "P8105: Homework 4"
+  title: "P8105 - Homework 4: Home"
   right:
     - text: "Resume"
       href: about.html
     - icon: fa-envelope fa-lg
-      href: mailto:<you@youremail.com>
+      href: mailto:<gw2442@cumc.columbia.edu>
     - icon: fa-github fa-lg
-      href: http://github.com/<YOUR_GH_NAME>/
+      href: https://github.com/gw2442/
 output:
   html_document:
     theme: cerulean
